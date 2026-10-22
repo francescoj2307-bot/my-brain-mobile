@@ -74,5 +74,34 @@ function initialize(){
  header.after(panel);
  getArchive().then(d=>{if(d)show("Archivio Mac locale disponibile. Puoi reimportare un nuovo export in qualsiasi momento.")}).catch(()=>show("Memoria IndexedDB non disponibile; controlla le impostazioni Safari.",true));
 }
+
+async function showOriginal(entity,id){
+ const original=await getArchive();
+ if(!original){show("Prima importa il backup JSON originale del Mac.",true);return}
+ const record=Array.isArray(original[entity])?original[entity].find(x=>Number(x.id)===Number(id)):null;
+ if(!record){show("Record originale non trovato.",true);return}
+ let dialog=document.getElementById("mac-original-dialog");
+ if(!dialog){
+   dialog=document.createElement("dialog");dialog.id="mac-original-dialog";
+   dialog.style.cssText="background:#112a29;color:#eff8f3;border:1px solid #437060;border-radius:18px;padding:20px;width:min(650px,93vw);max-height:80dvh;overflow:auto";
+   document.body.append(dialog);
+ }
+ dialog.replaceChildren();
+ const header=document.createElement("div");header.style.cssText="display:flex;justify-content:space-between;gap:12px;align-items:center";
+ const h=document.createElement("h2");h.textContent=(LABEL[entity]||entity)+" · "+(record.name||record.title||record.id);
+ h.style.margin="0";h.style.fontSize="19px";
+ const close=makeButton("Chiudi",()=>dialog.close());header.append(h,close);dialog.append(header);
+ const note=document.createElement("p");note.textContent="Dettaglio strutturato del backup ufficiale. È una copia di sola lettura: le modifiche nella PWA non aggiornano il Mac.";
+ note.style.cssText="font-size:12px;color:#9dbdb3;line-height:1.5";dialog.append(note);
+ for(const [key,value] of Object.entries(record)){
+   if(value==null||value==="")continue;
+   const group=document.createElement("div");group.style.cssText="border-top:1px solid #36544a;padding:8px 0";
+   const label=document.createElement("small");label.textContent=key;label.style.cssText="display:block;color:#88c9ad";
+   const val=document.createElement("div");val.textContent=typeof value==="object"?JSON.stringify(value):String(value);val.style.cssText="white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px";
+   group.append(label,val);dialog.append(group);
+ }
+ dialog.showModal();
+}
+window.MyBrainMobileOfficial={showOriginal};
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initialize);else initialize();
 })();
