@@ -1,5 +1,5 @@
-const CACHE='my-brain-mobile-v3-20261022';
-const ASSETS=['./','./index.html','./manifest.webmanifest','./icon.svg','./icon-180.png','./official-mac-import.js?v=2'];
+const CACHE='my-brain-mobile-v4-20261022';
+const ASSETS=['./','./index.html','./manifest.webmanifest','./icon.svg','./icon-180.png','./official-mac-import.js?v=3'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
