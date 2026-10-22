@@ -1,5 +1,5 @@
 const CACHE='my-brain-mobile-v1-20261022';
-const ASSETS=['./','./index.html','./manifest.webmanifest','./icon.svg'];
+const ASSETS=['./','./index.html','./manifest.webmanifest','./icon.svg','./icon-180.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
