@@ -69,7 +69,8 @@ function initialize(){
  const toggle=makeButton("×",()=>panel.classList.toggle("collapsed"));toggle.title="Apri o chiudi importazione";
  input.addEventListener("change",async()=>{try{show("Lettura archivio…");await importMac(input.files?.[0])}catch(e){show("Importazione non riuscita: "+e.message,true)}finally{input.value=""}});
  const status=document.createElement("div");status.id="mac-status";status.setAttribute("role","status");status.textContent="Nessun dato del Mac trasferito finché non scegli un export JSON.";
- const openOriginal=makeButton("◎ Interfaccia originale",()=>{location.href="./original/"});\n controls.append(choose,openOriginal,downloadOriginal,toggle,input);
+ const openOriginal=makeButton("◎ Interfaccia originale",()=>{location.href="./original/"});
+ controls.append(choose,openOriginal,downloadOriginal,toggle,input);
  panel.append(title,caption,controls,status);
  header.after(panel);
  getArchive().then(d=>{if(d)show("Archivio Mac locale disponibile. Puoi reimportare un nuovo export in qualsiasi momento.")}).catch(()=>show("Memoria IndexedDB non disponibile; controlla le impostazioni Safari.",true));
