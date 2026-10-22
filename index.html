@@ -17,11 +17,12 @@
 <script>
 (function(){
 'use strict';
-var AREAS={persona:['Persona','◉','Chi sto diventando'],conoscenza:['Conoscenza','◇','Cosa sto imparando'],progetti:['Progetti','↗','Cosa sto costruendo'],decisioni:['Decisioni','⚖','Come penso e scelgo'],crescita:['Crescita','✳','Come sto evolvendo']};
+var AREAS={apprendimento:['Apprendimento','◇','Ciò che sto imparando'],progetti:['Progetti','↗','Ciò che sto costruendo'],obiettivi:['Obiettivi','◎','Dove voglio arrivare'],decisioni:['Decisioni','⚖','Come scelgo'],evoluzione:['Evoluzione','✳','Come sto cambiando']};
 var PAGES=[['home','⌂','Home'],['mappa','◎','Mappa'],['oggi','✓','Oggi'],['inbox','✦','Inbox'],['archivio','▤','Archivio'],['timeline','◷','Timeline'],['impostazioni','⚙','Impostazioni']];
 var key='my-brain-mobile-v1',initial={version:1,entries:[],events:[]},db,route='home',areaFilter='',query='',editId=null;
 function fresh(){return JSON.parse(JSON.stringify(initial))}
 try{db=JSON.parse(localStorage.getItem(key)||'null');if(!db||!Array.isArray(db.entries)||!Array.isArray(db.events))db=fresh()}catch(e){db=fresh()}
+for(const entry of db.entries){if(entry.area==='persona')entry.area='obiettivi';else if(entry.area==='conoscenza')entry.area='apprendimento';else if(entry.area==='crescita')entry.area='evoluzione'}
 function byId(id){return document.getElementById(id)}
 function el(tag,txt,cls){var n=document.createElement(tag);if(txt!==undefined&&txt!==null)n.textContent=String(txt);if(cls)n.className=cls;return n}
 function append(parent){Array.prototype.slice.call(arguments,1).forEach(function(child){if(child)parent.appendChild(child)});return parent}
