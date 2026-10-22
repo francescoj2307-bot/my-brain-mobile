@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<rect width="512" height="512" rx="112" fill="#0b191a"/>
-<circle cx="256" cy="256" r="124" fill="#173a34" stroke="#80dfb7" stroke-width="10"/>
-<g stroke="#76d9b3" stroke-width="12" stroke-linecap="round">
-<path d="M256 256L145 158M256 256L367 158M256 256L128 337M256 256L384 337M256 256L256 397"/>
-</g>
-<circle cx="256" cy="256" r="32" fill="#80dfb7"/>
-<g fill="#edfff6"><circle cx="145" cy="158" r="19"/><circle cx="367" cy="158" r="19"/><circle cx="128" cy="337" r="19"/><circle cx="384" cy="337" r="19"/><circle cx="256" cy="397" r="19"/></g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#0b0d0c"/><circle cx="256" cy="256" r="126" fill="#132925" stroke="#8dc7a8" stroke-width="9"/><g stroke="#a6d4bc" stroke-linecap="round" stroke-width="12"><path d="M256 256L154 149M256 256L358 149M256 256L132 336M256 256L380 336M256 256V389"/></g><circle cx="256" cy="256" r="35" fill="#bcecd1"/><g fill="#a9dbbd"><circle cx="154" cy="149" r="19"/><circle cx="358" cy="149" r="19"/><circle cx="132" cy="336" r="19"/><circle cx="380" cy="336" r="19"/><circle cx="256" cy="389" r="19"/></g></svg>

@@ -1,13 +1,12 @@
 {
-  "name": "My Brain Mobile",
+  "name": "My Brain",
   "short_name": "My Brain",
-  "description": "Il mio cervello digitale local-first",
   "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b1618",
-  "theme_color": "#0b191a",
+  "background_color": "#0b0d0c",
+  "theme_color": "#0b0d0c",
   "lang": "it",
   "icons": [
     {
@@ -16,5 +15,6 @@
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "description": "My Brain v0.5 — sistema cognitivo personale sul dispositivo"
 }
