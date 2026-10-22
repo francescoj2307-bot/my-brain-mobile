@@ -3,7 +3,7 @@
 (()=>{
 "use strict";
 const DATA_KEYS=["projects","goals","knowledge","decisions","ideas","signals","actions","timeline_events","skills","skill_evidence"];
-const AREA={projects:"progetti",goals:"persona",knowledge:"conoscenza",decisions:"decisioni",ideas:"progetti",signals:"progetti",actions:"progetti",timeline_events:"crescita",skills:"conoscenza",skill_evidence:"conoscenza"};
+const AREA={projects:"progetti",goals:"obiettivi",knowledge:"apprendimento",decisions:"decisioni",ideas:"progetti",signals:"progetti",actions:"progetti",timeline_events:"evoluzione",skills:"apprendimento",skill_evidence:"apprendimento"};
 const KIND={projects:"project",goals:"goal",knowledge:"knowledge",decisions:"decision",ideas:"idea",signals:"signal",actions:"task",timeline_events:"state_change",skills:"knowledge",skill_evidence:"knowledge"};
 const DESC={projects:["mission","description","phase","next_step"],goals:["description","next_step"],knowledge:["topic","summary","source"],decisions:["context","rationale","alternatives","outcome","reconsider_trigger"],ideas:["content"],signals:["content"],actions:["reason"],timeline_events:["description"],skills:["area","evolution"],skill_evidence:["description"]};
 const LABEL={projects:"Progetto",goals:"Obiettivo",knowledge:"Conoscenza",decisions:"Decisione",ideas:"Idea",signals:"Segnale",actions:"Azione",timeline_events:"Timeline",skills:"Competenza",skill_evidence:"Evidenza"};
